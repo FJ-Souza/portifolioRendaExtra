@@ -1,0 +1,12 @@
+.imgcarr {
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+}
+
+@media (max-width: 576px) {
+    .imgcarr {
+        width: 100vw;
+        height: 70vh;
+        object-fit: fill;
+    } }

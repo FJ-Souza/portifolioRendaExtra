@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light" class="translated-ltr">
+    <head>
+        <script src="/docs/5.3/assets/js/color-modes.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.122.0">
+        <title>Modelo de carrossel · Bootstrap v5.3</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+        <!-- usando -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+        <meta name="theme-color" content="#712cf9">
+        
+        
+            <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+        
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+        
+            .b-example-divider {
+                width: 100%;
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
+        
+            .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+            }
+        
+            .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+            }
+        
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+        
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+        
+            .btn-bd-primary {
+                --bd-violet-bg: #712cf9;
+                --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        
+                --bs-btn-font-weight: 600;
+                --bs-btn-color: var(--bs-white);
+                --bs-btn-bg: var(--bd-violet-bg);
+                --bs-btn-border-color: var(--bd-violet-bg);
+                --bs-btn-hover-color: var(--bs-white);
+                --bs-btn-hover-bg: #6528e0;
+                --bs-btn-hover-border-color: #6528e0;
+                --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+                --bs-btn-active-color: var(--bs-btn-hover-color);
+                --bs-btn-active-bg: #5a23c8;
+                --bs-btn-active-border-color: #5a23c8;
+            }
+        
+            .bd-mode-toggle {
+                z-index: 1500;
+            }
+        
+            .bd-mode-toggle .dropdown-menu .active .bi {
+                display: block !important;
+            }
+            </style>
+        
+            <link href="carousel.css" rel="stylesheet">
+            <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=DAY/d=0/rs=AN8SPfrCcgxoBri2FVMQptvuOBiOsolgBw/m=el_main_css">
+    </head>
+    <body>
+        <!-- ================================================== NAVIBAR ================================================== -->
+        <header data-bs-theme="dark">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jr Souza</font></font></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    </ul>
+                    <div class="d-flex" role="search">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre</font></font></a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depoimentos</font></font></a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Treinamento</font></font></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+    
+        <main>
+            <!-- ================================================== carrosel ================================================== -->
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Diapositivo 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Diapositivo 2" class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Diapositivo 3" class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="assets/img/carrosel01.jpeg" class="imgcarr" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/carrosel02.jpeg" class="imgcarr" alt="">
+            </div>
+            <div class="carousel-item active">
+                <img src="assets/img/carrosel03.jpeg" class="imgcarr" alt="">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anterior</font></font></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Próximo</font></font></span>
+            </button>
+        </div>
+        
+        <!-- ================================================== sobre ================================================== -->
+        <div class="text-center">
+            <h4>Sobre</h4>
+            <p>Prazer pra quem não me conhece me chamo Junior, sou empreendedor digital, trabalho com vendas de infoprodutos, e graças ao digital 
+                venho mudando de vida. Tendo uma liberdade financeira que jamais imaginaria que eu teria! <br> Tenho apenas 18 anos, veiculo proprio e
+                habilitação A e B, hoje em dia a maioria dos jovens perdem tempo com a internet, eu ja não perco meu tempo desde que conhece esse mercado digital.
+                <br>Se você não conhce o mercado digital, vai conhecer agora. Mercado Digital é nada mais nada menos que uma plataforma de produtos como (E-book, Ingresso
+                de eventos, Cursos...), <br> onde você se afilia a esses produtos e o vende nas redes socias. 
+                Se você também é que nem esses jovens que perdem tempo com a
+                internet e quer parar de perder tempo e <br>começar a ganhar dinheiro, usando apenas seu celular e a internet, Clique no botão abaixo e comece já.   
+            </p>
+        </div>
+
+        <!-- ================================================== Depoimentos ================================================== -->
+        <div class="container marketing">
+            <div class="album py-3 bg-body-tertiary text-center">
+                <h3>Depoimentos dos alunos</h3>
+                <div class="container py-3">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="assets/img/dep01.jpeg" class="imgdep" alt="">
+                                <!-- <div class="card-body">
+                                    <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Já imaginou receber essas notificações de vendas todos os dias na tela do seu celular?</font></font></p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="assets/img/dep03.jpeg" class="imgdep" alt="">
+                                <!-- <div class="card-body">
+                                    <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Assim é a realidade diária daqueles que não tiveram medo e começaram nesse mercado incrível.</font></font></p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="assets/img/dep02.jpeg" class="imgdep" alt="">
+                                <!-- <div class="card-body">
+                                    <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Você pode ser o próximo a mudar sua atual realidade financeira e viver desse mercado que vem mudando vidas!</font></font></p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div> <br><br>
+                <p><strong>Já imaginou receber essas notificações todos
+                    os dias na tela do seu celular?</strong><br>
+                    
+                    Assim é a realidade diária daqueles que não
+                    tiveram medo e começaram nesse mercado
+                    incrível. <br>
+                    
+                    Você pode ser o próximo a mudar sua atual
+                    realidade financeira e viver desse mercado que
+                    vem mudando vidas!</p>
+            </div>
+
+            <!-- ================================================== treinamento ================================================== -->
+        
+            <hr class="featurette-divider">
+        
+            <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Primeiro título do featurette. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vai te deixar de queixo caído.</font></font></span></h2>
+                <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Um ótimo conteúdo de espaço reservado para o primeiro featurette aqui. Imagine uma prosa emocionante aqui.</font></font></p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaço reservado: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            </div>
+            </div>
+        
+            <hr class="featurette-divider">
+        
+            <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ah sim, é muito bom. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Veja você mesmo.</font></font></span></h2>
+                <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Outro featurette? Claro. Mais conteúdo de placeholder aqui para dar uma ideia de como esse layout funcionaria com algum conteúdo real do mundo real no lugar.</font></font></p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaço reservado: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            </div>
+            </div>
+        
+            <hr class="featurette-divider">
+        
+            <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">E por último, este. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Xeque-mate.</font></font></span></h2>
+                <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">E sim, este é o último bloco de conteúdo representativo de espaço reservado. Novamente, não é realmente pretendido para ser lido, apenas para dar a você uma visão melhor de como isso ficaria com algum conteúdo real. Seu conteúdo.</font></font></p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaço reservado: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            </div>
+            </div>
+        
+            <hr class="featurette-divider">
+        </div>
+        
+        <!-- ================================================== FOOTER ================================================== -->
+        <footer class="container">
+            <p class="float-end"><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Voltar ao topo</font></font></a></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2017–2024 Company, Inc. · </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Privacidade</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> · </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Termos</font></font></a></p>
+        </footer>
+        </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Texto original</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Avalie a tradução</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">O feedback vai ser usado para ajudar a melhorar o Google Tradutor</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Tradução boa" aria-label="Tradução boa" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Tradução ruim" aria-label="Tradução ruim" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
+    
+        
+    
+    </body>
+</html>
